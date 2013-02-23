@@ -1,0 +1,5 @@
+**.swp
+undodir/*
+
+# keep this last
+!.gitkeep
