@@ -6,7 +6,7 @@
 "       Amir Salihefendic
 "       http://amix.dk - amix@amix.dk
 "
-" Version: 5.0.1 adapted from version 5.0 by amix
+" Version: 5.0.2 adapted from version 5.0 by amix
 "
 " Blog_post: 
 "       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
@@ -24,114 +24,9 @@
 " Raw_version: 
 "       http://amix.dk/vim/vimrc.txt
 "
-" Sections:
-"    -> Helper functions
-"    -> General
-"    -> VIM user interface
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
-"    -> Visual mode related
-"    -> Command mode related
-"    -> Moving around, tabs and buffers
-"    -> Status line
-"    -> Editing mappings
-"    -> vimgrep searching and cope displaying
-"    -> Spell checking
-"    -> Misc
-"    -> Helper functions
-"
-"    -> Cope
-"    -> Minibuffer plugin
-"    -> Omni complete functions
-"    -> Python section
-"    -> JavaScript section
-"
-"
-" Plugins_Included:
-"     > minibufexpl.vim - http://www.vim.org/scripts/script.php?script_id=159
-"       Makes it easy to get an overview of buffers. I suggest using the updated
-"       version provided by Federico Holgado, see the home link.
-"           home -> https://github.com/fholgado/minibufexpl.vim
-"           info -> :e ~/.vim/bundle/plugin/minibufexpl.vim
-"           version -> (forked git project)
-"
-"     > bufexplorer - http://www.vim.org/scripts/script.php?script_id=42
-"       Makes it easy to switch between buffers:
-"           info -> :help bufExplorer
-"           version -> ( ~ 7.2.8 forked a git repo, that was not official project )
-"
-"
-"     > yankring.vim - http://www.vim.org/scripts/script.php?script_id=1234
-"       Emacs's killring, useful when using the clipboard:
-"           info -> :help yankring
-"           version -> ( 14.0 forked a git repo, might be official )
-"
-"     > surround.vim - http://www.vim.org/scripts/script.php?script_id=1697
-"       Makes it easy to work with surrounding text:
-"           info -> :help surround
-"           version -> (forked git project 20120914 - commit: 1a73f607f8f54)
-"
-"     > snipMate.vim - http://www.vim.org/scripts/script.php?script_id=2540
-"       Snippets for many languages (similar to TextMate's):
-"           info -> :help snipMate
-"           version -> (forked git project 20120914 - commit: f5a75d075d)
-"
-"     > mru.vim - http://www.vim.org/scripts/script.php?script_id=521
-"       Plugin to manage Most Recently Used (MRU) files:
-"           info -> :e ~/.vim_runtime/plugin/mru.vim
-"           version -> (forked git project 20120914 - commit: c7018343f4)
-"
-"     > Command-T - http://www.vim.org/scripts/script.php?script_id=3025
-"       Command-T plug-in provides an extremely fast, intuitive mechanism for opening files:
-"           info -> :help CommandT
-"           screencast and web-help -> http://amix.dk/blog/post/19501
-"           version -> ( 1.3.1 forked git repo 20120914 - commit: eeaa7bcff0d)
-"           (DISABLED seg faults)
-"
-"     > dbext - http://www.vim.org/scripts/script.php?script_id=356
-"       dbext  contains functions/mappings/commands to enable Vim to access several
-"       databases. Current databases supported are: Mysql, PostgreSQL, Ingres, Oracle,
-"       Oracle Rdb (VMS), Sybase Adaptive Server Anywhere, Sybase Adaptive Server Enterprise,
-"       Microsoft SQL Server, DB2, Interbase and SQLite and ODBC are supported
-"           homepage: http://vim.sourceforge.net/script.php?script_id=356
-"           version -> 13.0
-"           DISABLED - not being used.
-"
-"     > matchit - http://www.vim.org/script.php?script_id=39
-"       matchit script allows you to configure % to match more than just 
-"       single characters.  You can match words and even regular expressions. 
-"            versoin -> 1.13.2
-"            DISABLED - don't think its necessary
-"
-"     > rails - http://www.vim.org/scripts/script.php?script_id=1567
-"       rails plugin provides enhanced editing features for rails projects
-"       which rival the functionality you typically see depicted in TextMate
-"           homepage: http://rails.vim.tpope.net/
-"           version -> (forked git project 20120914 - commit: 9fb06f5af5)
-"
-"     > textobj-user - http://www.vim.org/scripts/script.php?script_id=2100 
-"       textobj-user is a Vim plugin to SUPPORT writing user-defined text objects,
-"       especially, simple text objects which can be defined by regular expression
-"           version -> (forked git project 20120914 - commit: 1b738334952a)
-"
-"     > rubyblock - http://www.vim.org/scripts/script.php?script_id=3382
-"       rubyblock is an implementation of text objects which is built on textobj-user
-"           version -> 0.0.2
-"           DISABLED
-"
-"     > indent-object - http://www.vim.org/scripts/script.php?script_id=3037
-"       indent-object defines a new text object, based on indentation levels
-"           version -> 1.1.2
-"           DISABLED
-"
-"     > ragtag - http://www.vim.org/scripts/script.php?script_id=1896
-"       ragtag is a collection of mappings for editing a variety of filetypes including
-"        html, xhtml, wml, xml, xslt, xsd, jsp, php, aspperl, aspvbs, cf, mason, htmldjango,
-"        and eruby
-"           version -> (forked git project 20120914 - commit: 2f639ea61a) 2.0
-"
 "  Revisions:
+"     > 5.0.2: Setup VIM for "high speed" ruby workflow as configured /
+"              described: http://velvetpulse.com/2012/11/19/improve-your-ruby-workflow-by-integrating-vim-tmux-pry/
 "     > 5.0.1: Now running on Mac OSx 10.8 Macbook Pro, pushed to github
 "              with plugins installed as git submodules rather than forks of
 "              the original projects. Also merged with version 5.0 of Amix's
@@ -857,4 +752,18 @@ endif
 """"""""""""""""""""""""""""""
 let Grep_Skip_Dirs = '.git RCS CVS SCCS .svn generated'
 set grepprg=/bin/grep\ -nH
+
+""""""""""""""""""""""""""""""
+" Screen settings
+""""""""""""""""""""""""""""""
+let g:ScreenImpl = 'Tmux'
+let g:ScreenShellTmuxInitArgs = '-2'
+let g:ScreenShellInitialFocus = 'shell'
+let g:ScreenShellQuitOnVimExit = 0
+map <F5> :ScreenShellVertical<CR>
+command -nargs=? -complete=shellcmd W  :w | :call ScreenShellSend("load '".@%."';")
+map <Leader>c :ScreenShellVertical bundle exec rails c<CR>
+map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
+map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
+map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
 

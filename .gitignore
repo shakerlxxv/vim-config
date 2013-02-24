@@ -1,5 +1,13 @@
 **.swp
 undodir/*
+/yankring_history*
+/viminfo
+/swap
+doc/tags
+.netrwhist
+/undo
+/spell
+/view
 
 # keep this last
 !.gitkeep
