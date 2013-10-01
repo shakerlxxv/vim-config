@@ -223,12 +223,15 @@ if has("gui_running")
   set guioptions+=e
   set t_Co=256
   set background=dark
-  colorscheme darkblue "peaksea transparent
-  set nonu
+  "colorscheme darkblue "peaksea transparent
+  colorscheme solarized
+  set nu
   "set guitablabel=%t
   set guitablabel=%M\ %t
 else
-  colorscheme zellner
+  set t_Co=256
+  "colorscheme distinguished
+  colorscheme solarized
   set background=dark
   set nonu
 endif
@@ -775,3 +778,13 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_command = "!cd `pwd`; DOMAIN=dev rspec {spec}"
+
+""""""""""""""""""""""""""""""
+" SyntaxComplete
+""""""""""""""""""""""""""""""
+if has("autocmd") && exists("+omnifunc")
+autocmd Filetype *
+        \	if &omnifunc == "" |
+        \		setlocal omnifunc=syntaxcomplete#Complete |
+        \	endif
+endif

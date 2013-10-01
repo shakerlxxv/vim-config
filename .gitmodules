@@ -53,3 +53,12 @@
 [submodule "bundle/vim-rspec"]
 	path = bundle/vim-rspec
 	url = https://github.com/thoughtbot/vim-rspec.git
+[submodule "bundle/syntaxcomplete"]
+	path = bundle/syntaxcomplete
+	url = https://github.com/vim-scripts/SyntaxComplete
+[submodule "bundle/vim-distinguished"]
+	path = bundle/vim-distinguished
+	url = https://github.com/Lokaltog/vim-distinguished.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
