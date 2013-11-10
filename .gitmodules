@@ -62,3 +62,9 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/funcvoo.vim"]
+	path = bundle/funcvoo.vim
+	url = https://github.com/rizzatti/funcoo.vim.git
+[submodule "bundle/dash.vim"]
+	path = bundle/dash.vim
+	url = https://github.com/rizzatti/dash.vim.git
